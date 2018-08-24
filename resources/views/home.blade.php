@@ -2,30 +2,20 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
-        <div class="card card-product">
-            <div class="card-header">
-                <h4 class="card-title">
-                    <a href="#pablo">Beautiful Castle</a>
-                </h4>
-            </div>
-            <div class="card-body">
-                <a href="#pablo">
-                    <img class="img" src="../assets/img/card-1.jpg">
-                </a>
-                <div class="card-description">
-                    The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Milan.
+    <div class="col-12">
+
+        @foreach(\App\Models\Post::all() as $post)
+            <div class="card card-product">
+                <div class="card-body">
+                    <h5 class="font-weight-bold">{{ $post->title }}</h5>
+                    @if($post->files()->first())
+                        <img class="img" src="{{ asset('storage/' . $post->files()->first()->id) }}">
+                    @endif
+                    <p>{{ $post->description }}</p>
                 </div>
             </div>
-            <div class="card-footer">
-                <div class="price">
-                    <h4>$459/night</h4>
-                </div>
-                <div class="stats">
-                    <p class="card-category"><i class="material-icons">place</i> Milan, Italy</p>
-                </div>
-            </div>
-        </div>
+        @endforeach
+
     </div>
 </div>
 @endsection
