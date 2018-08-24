@@ -54,12 +54,12 @@
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="{{URL::asset('img/faces/avatar.jpg')}}" />
+                        <img src="{{URL::asset('img/default-avatar.png')}}" />
                         </div>
                         <div class="user-info">
                         <a data-toggle="collapse" href="#collapseExample" class="username">
-                            <span>
-                                Tania Andrew
+                            <span class="font-weight-bold">
+                                {{ Auth::user()->user_name }}
                                 <b class="caret"></b>
                             </span>
                         </a>

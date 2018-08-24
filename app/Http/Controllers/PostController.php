@@ -14,11 +14,6 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
-    {
-
-    }
-
     public function show(Post $post)
     {
 
