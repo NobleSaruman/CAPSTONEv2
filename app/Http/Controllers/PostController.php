@@ -16,7 +16,11 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $data = [
+            'post' => $post
+        ];        
 
+        return view('show_post', $data);
     }
 
     public function create()
