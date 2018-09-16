@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <div class="row justify-content-center" style="font-size:24px;">LifeShare - A community to share, learn and support.</div>
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}</div>
     

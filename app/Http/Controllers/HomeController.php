@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,17 @@ class HomeController extends Controller
         $data = [
             'users' => User::all(),
             'posts' => Post::all()
+        ];
+
+        return view('home', $data);
+    }
+
+    public function category(Request $request)
+    {
+        $filter = Category::where('name', $request->category)->first()->id;
+        $data = [
+            'users' => User::all(),
+            'posts' => Post::where('category_id', $filter)->get()
         ];
 
         return view('home', $data);

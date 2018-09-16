@@ -6,19 +6,18 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-5">
-                    <h3 class="font-weight-bold">{{ $post->title }}</h3>
-                    <div>Category: {{ App\Models\Category::find($post->category_id)->name }}</div>
-                    <div>Posted At: {{ $post->created_at }}</div>
-                    <hr>
+                    <blockquote class="blockquote">
+                        <div><h2 class="mb-0" style="display:inline-block;">{{ $post->title }}</h2> <small>{{ App\Models\Category::find($post->category_id)->name }}</small></div>
+                        <footer class="blockquote-footer">Posted By <cite title="Source Title">{{ App\Models\User::find($post->user_id)->user_name }}</cite> on {{ date('d M Y',strtotime($post->created_at)) }}</footer>
+                    </blockquote>
                     <div>{!! $post->description !!}</div>
-
+                    <hr>
+                    <h3>Comments</h3>
                     @foreach(App\Models\Comment::where('post_id', $post->id)->get() as $comment)
-                        <hr>
-                        <div class="font-weight-bold">{{ App\Models\User::find($comment->user_id)->user_name }} commented at {{ $comment->created_at }}</div>
+                        <div class="font-weight-bold text-secondary"><i>{{ App\Models\User::find($comment->user_id)->user_name }}</i> commented on {{ date('d M Y',strtotime($comment->created_at)) }}</div>
                         <div>{!! $comment->comment !!}</div>
                     @endforeach
 
-                    <hr>
                     <form id="create_comment_form" method="POST" action="{{ url('comment/store') }}">
                         @csrf
 
@@ -26,7 +25,6 @@
         
                         <div class="row">
                             <div class="form-group col-12">
-                                <label for="comment">Description</label>
                                 <textarea class="form-control d-none" id="comment_input" name="comment"></textarea>
                                 <div id="comment" style="height: 100px;">{!! old('description') !!}</div>
                             </div>

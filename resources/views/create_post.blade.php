@@ -39,7 +39,6 @@
 
                 <div class="row">
                     <div class="form-group col-12">
-                        <label for="description">Description</label>
                         <textarea class="form-control d-none" id="description_input" name="description"></textarea>
                         <div id="description" style="height: 250px;">{!! old('description') !!}</div>
                     </div>

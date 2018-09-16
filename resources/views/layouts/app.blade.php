@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" href="{{ asset('') }}img/favicon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>
-            Material Dashboard PRO by Creative Tim
+            LifeShare - A community to share, learn and support
         </title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
         {{--     Fonts and icons     --}}
@@ -45,51 +45,24 @@
             --}}
             <div class="logo">
                 <a href="" class="simple-text logo-mini">
-
+                    <img style="width:100%;" src="{{URL::asset('img/lifeshare.png')}}" />
                 </a>
                 <a href="{{ url('/') }}" class="simple-text logo-normal">
                     LifeShare
                 </a>
             </div>
             <div class="sidebar-wrapper">
-                <div class="user">
-                    <div class="photo">
-                        <img src="{{URL::asset('img/default-avatar.png')}}" />
-                        </div>
-                        <div class="user-info">
-                        <a data-toggle="collapse" href="#collapseExample" class="username">
-                            <span class="font-weight-bold">
-                                {{ Auth::user()->user_name }}
-                                <b class="caret"></b>
-                            </span>
-                        </a>
-                        <div class="collapse" id="collapseExample">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        <span class="sidebar-mini"> MP </span>
-                                        <span class="sidebar-normal"> My Profile </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        <span class="sidebar-mini"> EP </span>
-                                        <span class="sidebar-normal"> Edit Profile </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">
-                                        <span class="sidebar-mini"> S </span>
-                                        <span class="sidebar-normal"> Settings </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                {{-- <div class="user">
+                    <a href="" class="simple-text logo-mini">
+                        
+                    </a>
+                    <a href="{{ url('/') }}" class="simple-text logo-normal">
+                        Hi, {{ Auth::user()->user_name }}
+                    </a>
+                </div> --}}
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{ url('post/create') }}">
+                        <a class="nav-link" href="{{ url('/create') }}">
                             <i class="material-icons">add_circle</i>
                             <p> Post Story </p>
                         </a>
@@ -110,61 +83,61 @@
                         <div class="collapse" id="tablesExamples">
                             <ul class="nav">
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/') }}">
                                         <i class="material-icons">category</i>
                                         <span class="sidebar-normal"> All </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/health') }}">
                                         <i class="material-icons">local_hospital</i>
                                         <span class="sidebar-normal"> Health </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Entertainment') }}">
                                         <i class="material-icons">local_movies</i>
                                         <span class="sidebar-normal"> Entertainment </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Events') }}">
                                         <i class="material-icons">local_activity</i>
                                         <span class="sidebar-normal"> Events </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Financial') }}">
                                         <i class="material-icons">local_atm</i>
                                         <span class="sidebar-normal"> Financial </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Sports') }}">
                                         <i class="material-icons">directions_bike</i>
                                         <span class="sidebar-normal"> Sports </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Community') }}">
                                         <i class="material-icons">people</i>
                                         <span class="sidebar-normal"> Community </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Fiction') }}">
                                         <i class="material-icons">local_library</i>
                                         <span class="sidebar-normal"> Fiction </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Food') }}">
                                         <i class="material-icons">restaurant</i>
                                         <span class="sidebar-normal"> Food </span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="">
+                                    <a class="nav-link" href="{{ url('/Inspiration') }}">
                                         <i class="material-icons">restaurant</i>
                                         <span class="sidebar-normal"> Inspiration </span>
                                     </a>
@@ -196,23 +169,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end">
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">notifications</i>
-                            <span class="notification">5</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                                <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                                <a class="dropdown-item" href="#">Another Notification</a>
-                                <a class="dropdown-item" href="#">Another One</a>
-                            </div>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                <i class="material-icons">power_settings_new</i>
+                                <i class="material-icons">power_settings_new</i> Log out
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

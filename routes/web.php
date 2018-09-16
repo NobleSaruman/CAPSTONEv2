@@ -13,11 +13,12 @@
 Auth::routes();
 
 Route::get('/home',             'HomeController@index');
+Route::get('/create',           'PostController@create');
 Route::get('/',                 'HomeController@index');
 
+Route::get('/{category}',       'HomeController@category');
 Route::get('/post/{post}',      'PostController@show');
-Route::get('/post/create',      'PostController@create');
-Route::post('/post/store',      'PostController@store');
 
+Route::post('/post/store',      'PostController@store');
 Route::post('/comment/store',   'CommentController@store');
 

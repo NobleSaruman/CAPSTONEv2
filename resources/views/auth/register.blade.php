@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <div class="row justify-content-center" style="font-size:24px;">LifeShare - A community to share, learn and support.</div>
                 <div class="card">
                     <div class="card-header">{{ __('Register') }}</div>
 
@@ -72,6 +73,7 @@
                         </form>
                     </div>
                 </div>
+                <div class="row justify-content-center" style="font-size:16px;">LifeShare is a website for Community users to share information with each other.</div>
             </div>
         </div>
     </div>
